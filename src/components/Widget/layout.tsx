@@ -108,6 +108,7 @@ function WidgetLayout({
 
   return (
     <div
+      data-iframe-height
       className={cn('rcw-widget-container', {
         'rcw-full-screen': fullScreenMode,
         'rcw-previewer': imagePreview
