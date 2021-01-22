@@ -5,7 +5,7 @@ import { addUserMessage } from '..';
 
 export default class App extends Component {
   componentDidMount() {
-    addResponseMessage("Welcome to the Covid Informative Bot!<br><br>\n\nGet information and guidance regarding the current outbreak of corona virus disease (COVID-19).<br><br>\n\nWhat would you like to know about corona virus?<br>\n1. FAQs<br>\n2. Interactive Game<br>\n3. Risk Assessment<br>\n4. Current Status<br>\n5. Travel Advice", new Date('2020-12-08T16:43:31.000Z') );
+    addResponseMessage("Welcome to the Covid Informative Bot!<br><br>\n\nGet information <i>cascasc</i> and guidance regarding the current outbreak of corona virus disease (COVID-19).<br><br>\n\nWhat would you like to know about corona virus?<br>\n1. FAQs<br>\n2. Interactive Game<br>\n3. Risk Assessment<br>\n4. Current Status<br>\n5. Travel Advice", new Date('2020-12-08T16:43:31.000Z') );
     addLinkSnippet({ link: 'https://google.com', title: 'Google' });
     addResponseMessage('![](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)');
     addResponseMessage('![vertical](https://d2sofvawe08yqg.cloudfront.net/reintroducing-react/hero2x?1556470143)');
