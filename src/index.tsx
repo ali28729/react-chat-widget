@@ -28,6 +28,7 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
+  addUserMessageFlag?: boolean;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -50,7 +51,8 @@ function ConnectedWidget({
   showTimeStamp,
   imagePreview,
   zoomStep,
-  handleSubmit
+  handleSubmit,
+  addUserMessageFlag
 }: Props) {
   return (
     <Provider store={store}>
@@ -75,6 +77,7 @@ function ConnectedWidget({
         imagePreview={imagePreview}
         zoomStep={zoomStep}
         handleSubmit={handleSubmit}
+        addUserMessageFlag={addUserMessageFlag}
       />
     </Provider>
   );
@@ -94,6 +97,7 @@ const defaultProps = {
   showTimeStamp: true,
   imagePreview: false,
   zoomStep: 80,
+  addUserMessageFlag: true
 };
 ConnectedWidget.defaultProps = defaultProps;
 

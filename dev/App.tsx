@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 
-import { Widget, addResponseMessage, setQuickButtons, toggleMsgLoader, addLinkSnippet } from '../index';
+import {
+  Widget,
+  addResponseMessage,
+  setQuickButtons,
+  toggleMsgLoader,
+  addLinkSnippet,
+} from '../index';
 import { addUserMessage } from '..';
 
 export default class App extends Component {
   componentDidMount() {
-    addResponseMessage("Welcome to the Covid Informative Bot!<br><br>\n\nGet information <i>cascasc</i> and guidance regarding the current outbreak of corona virus disease (COVID-19).<br><br>\n\nWhat would you like to know about corona virus?<br>\n1. FAQs<br>\n2. Interactive Game<br>\n3. Risk Assessment<br>\n4. Current Status<br>\n5. Travel Advice", new Date('2020-12-08T16:43:31.000Z') );
+    addResponseMessage(
+      "↵    Current Status on COVID-19 in Worldwide as on 26-January-2021:<br>↵    - <b>Total cases:</b> 17660523<br>↵    - <b>Today's cases:</b> 262929<br>↵    - <b>Total Deaths:</b> 680894<br>↵    - <b>Death Today:</b> 5851<br><br>↵    Current Status on COVID-19 in Pakistan as on 26-January-2021:<br>↵    - <b>Total cases:</b> 278305<br>↵    - <b>Today's cases:</b> 0<br>↵    - <b>Total Deaths:</b> 5951<br>↵    - <b>Death Today:</b> 0<br><br>↵    <b>Novel Coronavirus (COVID-19) Situation dashboard</b><br>↵    This interactive dashboard/map provides the latest global numbers and numbers by country of COVID-19 cases on a daily basis.↵<a href='https://covid19.who.int' target='_blank'>https://covid19.who.int</a> <br>",
+      new Date('2020-12-08T16:43:31.000Z'),
+    );
     addLinkSnippet({ link: 'https://google.com', title: 'Google' });
-    addResponseMessage('![](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)');
-    addResponseMessage('![vertical](https://d2sofvawe08yqg.cloudfront.net/reintroducing-react/hero2x?1556470143)');
+    addResponseMessage(
+      '![](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)',
+    );
+    addResponseMessage(
+      '![vertical](https://d2sofvawe08yqg.cloudfront.net/reintroducing-react/hero2x?1556470143)',
+    );
   }
 
   handleNewUserMessage = (newMessage: any) => {
@@ -16,30 +29,39 @@ export default class App extends Component {
     setTimeout(() => {
       toggleMsgLoader();
       if (newMessage === 'fruits') {
-        setQuickButtons([ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' }, { label: 'Pear', value: 'pear' }, { label: 'Banana', value: 'banana' } ]);
+        setQuickButtons([
+          { label: 'Apple', value: 'apple' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Pear', value: 'pear' },
+          { label: 'Banana', value: 'banana' },
+        ]);
       } else {
         addResponseMessage(newMessage);
       }
     }, 2000);
-  }
+  };
 
   handleQuickButtonClicked = (e: any) => {
     addResponseMessage('Selected ' + e);
     setQuickButtons([]);
-  }
+  };
 
   handleSubmit = (msgText: string) => {
-    if(msgText.length < 80) {
-      addUserMessage("Uh oh, please write a bit more.");
+    if (msgText.length < 80) {
+      addUserMessage('Uh oh, please write a bit more.');
       return false;
     }
     return true;
-  }
+  };
 
   render() {
     return (
       <div>
-        <button style={{position: 'absolute', right: 40, bottom: 150}}>test</button>
+        <button
+          style={{ position: 'absolute', right: 40, bottom: 150 }}
+        >
+          test
+        </button>
         <Widget
           title="Bienvenido"
           subtitle="Asistente virtual"
