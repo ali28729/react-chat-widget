@@ -12,7 +12,7 @@ import { addUserMessage } from '..';
 export default class App extends Component {
   componentDidMount() {
     addResponseMessage(
-      "↵    Current Status on COVID-19 in Worldwide as on 26-January-2021:<br>↵    - <b>Total cases:</b> 17660523<br>↵    - <b>Today's cases:</b> 262929<br>↵    - <b>Total Deaths:</b> 680894<br>↵    - <b>Death Today:</b> 5851<br><br>↵    Current Status on COVID-19 in Pakistan as on 26-January-2021:<br>↵    - <b>Total cases:</b> 278305<br>↵    - <b>Today's cases:</b> 0<br>↵    - <b>Total Deaths:</b> 5951<br>↵    - <b>Death Today:</b> 0<br><br>↵    <b>Novel Coronavirus (COVID-19) Situation dashboard</b><br>↵    This interactive dashboard/map provides the latest global numbers and numbers by country of COVID-19 cases on a daily basis.↵<a href='https://covid19.who.int' target='_blank'>https://covid19.who.int</a> <br>",
+      "\n    Current Status on COVID-19 in Worldwide as on 26-January-2021:<br>\n    - <b>Total cases:</b> 17660523<br>\n    - <b>Today's cases:</b> 262929<br>\n    - <b>Total Deaths:</b> 680894<br>\n    - <b>Death Today:</b> 5851<br><br>\n    Current Status on COVID-19 in Pakistan as on 26-January-2021:<br>\n    - <b>Total cases:</b> 278305<br>\n    - <b>Today's cases:</b> 0<br>\n    - <b>Total Deaths:</b> 5951<br>\n    - <b>Death Today:</b> 0<br><br>\n    <b>Novel Coronavirus (COVID-19) Situation dashboard</b><br>\n    This interactive dashboard/map provides the latest global numbers and numbers by country of COVID-19 cases on a daily basis.\n<a href=\"https://covid19.who.int\" target=\"_blank\">https://covid19.who.int</a> <br>",
       new Date('2020-12-08T16:43:31.000Z'),
     );
     addLinkSnippet({ link: 'https://google.com', title: 'Google' });

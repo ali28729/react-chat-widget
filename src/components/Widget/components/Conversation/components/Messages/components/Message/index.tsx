@@ -16,16 +16,17 @@ type Props = {
 };
 
 function Message({ message, showTimeStamp }: Props) {
-  const sanitizedHTML = markdownIt({ html: true })
-    .use(markdownItClass, {
-      img: ['rcw-message-img'],
-    })
-    .use(markdownItSup)
-    // .use(markdownItSanitizer)
-    .use(markdownItLinkAttributes, {
-      attrs: { target: '_blank', rel: 'noopener' },
-    })
-    .render(message.text);
+  const sanitizedHTML = message.text
+  // const sanitizedHTML = markdownIt({ html: true })
+  //   .use(markdownItClass, {
+  //     img: ['rcw-message-img'],
+  //   })
+  //   .use(markdownItSup)
+  //   // .use(markdownItSanitizer)
+  //   .use(markdownItLinkAttributes, {
+  //     attrs: { target: '_blank', rel: 'noopener' },
+  //   })
+  //   .render(message.text);
 
   return (
     <div className={`rcw-${message.sender}`}>
