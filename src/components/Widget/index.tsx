@@ -1,10 +1,10 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { MutableRefObject, Ref } from "react";
+import { useDispatch } from "react-redux";
 
-import { toggleChat, addUserMessage } from '../../store/actions';
-import { AnyFunction } from '../../utils/types';
+import { toggleChat, addUserMessage } from "../../store/actions";
+import { AnyFunction } from "../../utils/types";
 
-import WidgetLayout from './layout';
+import WidgetLayout from "./layout";
 
 type Props = {
   title: string;
@@ -28,7 +28,8 @@ type Props = {
   zoomStep?: number;
   handleSubmit?: AnyFunction;
   addUserMessageFlag?: boolean;
-}
+  modalRef?: MutableRefObject<HTMLDivElement | null>;
+};
 
 function Widget({
   title,
@@ -51,32 +52,33 @@ function Widget({
   imagePreview,
   zoomStep,
   handleSubmit,
-  addUserMessageFlag
+  addUserMessageFlag,
+  modalRef
 }: Props) {
   const dispatch = useDispatch();
 
   const toggleConversation = () => {
     dispatch(toggleChat());
-  }
+  };
 
-  const handleMessageSubmit = (event) => {
+  const handleMessageSubmit = event => {
     event.preventDefault();
     const userInput = event.target.message.value;
-    
-    if (!userInput.trim()) {      
-      return;      
+
+    if (!userInput.trim()) {
+      return;
     }
 
     handleSubmit?.(userInput);
     addUserMessageFlag && dispatch(addUserMessage(userInput));
     handleNewUserMessage(userInput);
-    event.target.message.value = '';
-  }
+    event.target.message.value = "";
+  };
 
   const onQuickButtonClicked = (event, value) => {
     event.preventDefault();
-    handleQuickButtonClicked?.(value)
-  }
+    handleQuickButtonClicked?.(value);
+  };
 
   return (
     <WidgetLayout
@@ -100,6 +102,7 @@ function Widget({
       showTimeStamp={showTimeStamp}
       imagePreview={imagePreview}
       zoomStep={zoomStep}
+      modalRef={modalRef}
     />
   );
 }

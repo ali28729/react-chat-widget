@@ -1,14 +1,14 @@
 export const MESSAGE_SENDER = {
-  CLIENT: 'client',
-  RESPONSE: 'response'
+  CLIENT: "client",
+  RESPONSE: "response"
 };
 
 export const MESSAGES_TYPES = {
-  TEXT: 'text',
+  TEXT: "text",
   SNIPPET: {
-    LINK: 'snippet'
+    LINK: "snippet"
   },
-  CUSTOM_COMPONENT: 'component'
+  CUSTOM_COMPONENT: "component"
 };
 
 export const MESSAGE_BOX_SCROLL_DURATION = 400;

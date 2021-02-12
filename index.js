@@ -1,4 +1,4 @@
-import ConnectedWidget from './src';
+import ConnectedWidget from "./src";
 import {
   addUserMessage,
   addResponseMessage,
@@ -13,7 +13,7 @@ import {
   deleteMessages,
   markAllAsRead,
   setBadgeCount,
-} from './src/store/dispatcher';
+} from "./src/store/dispatcher";
 
 export {
   ConnectedWidget as Widget,
@@ -29,5 +29,5 @@ export {
   setQuickButtons,
   deleteMessages,
   markAllAsRead,
-  setBadgeCount
+  setBadgeCount,
 };

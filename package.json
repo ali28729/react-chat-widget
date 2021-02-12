@@ -10,7 +10,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config ./webpack.config.prod.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
   },
   "keywords": [
     "react",

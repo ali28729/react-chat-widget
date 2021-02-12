@@ -6,8 +6,8 @@ import { Link } from "src/store/types";
 import "./styles.scss";
 
 type Props = {
-  message: Link,
-  showTimeStamp: boolean,
+  message: Link;
+  showTimeStamp: boolean;
 };
 
 function Snippet({ message, showTimeStamp }: Props) {
@@ -26,7 +26,9 @@ function Snippet({ message, showTimeStamp }: Props) {
           <p className="d-inline-block font-weight-bold">
             {format(message.timestamp, "hh:mm")}
           </p>
-          <p className="d-inline-block">{format(message.timestamp, " - yyyy/MM/dd")}</p>
+          <p className="d-inline-block">
+            {format(message.timestamp, " - yyyy/MM/dd")}
+          </p>
         </span>
       )}
     </div>
