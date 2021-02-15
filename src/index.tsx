@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import { Provider } from "react-redux";
 
 import Widget from "./components/Widget";
@@ -29,6 +29,7 @@ type Props = {
   zoomStep?: number;
   handleSubmit?: AnyFunction;
   addUserMessageFlag?: boolean;
+  modalRef?: MutableRefObject<HTMLDivElement | null>;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -52,7 +53,8 @@ function ConnectedWidget({
   imagePreview,
   zoomStep,
   handleSubmit,
-  addUserMessageFlag
+  addUserMessageFlag,
+  modalRef
 }: Props) {
   return (
     <Provider store={store}>
@@ -78,6 +80,7 @@ function ConnectedWidget({
         zoomStep={zoomStep}
         handleSubmit={handleSubmit}
         addUserMessageFlag={addUserMessageFlag}
+        modalRef={modalRef}
       />
     </Provider>
   );
@@ -97,7 +100,8 @@ const defaultProps = {
   showTimeStamp: true,
   imagePreview: false,
   zoomStep: 80,
-  addUserMessageFlag: true
+  addUserMessageFlag: true,
+  modalRef: null
 };
 ConnectedWidget.defaultProps = defaultProps;
 
